@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en"><head>
+    <script src="p5.js"></script>
+    <script src="p5.sound.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+    <script src="sketch.js"></script>
+    <script src="egpObject.js"></script>
+    <script src="event.js"></script>
+    
+    <center>Objet</center>
+    Position X : <input type="range" min="0" max="512" value="0" step="32" class="slider" id="slider_pos_x"><br>
+    Position Y : <input type="range" min="0" max="512" value="0" step="32" class="slider" id="slider_pos_y"><br>
+
+    Scale X : <input type="range" min="0" max="512" value="216" step="32" class="slider" id="slider_size_x"><br>
+    Scale Y : <input type="range" min="0" max="512" value="216" step="32" class="slider" id="slider_size_y"><br>
+
+    Rotation : <input type="range" min="0" max="360" value="0" step="22.5" class="slider" id="slider_angle"><br>
+
+    Couleur : <input type="color" id="color_picker" name="color_picker" value="#ff0000"><br>
+
+    Texte : <input type="text" id="input_text" onchange=""><br>
+
+    <center>Ajouter</center>
+    <select name="object_type" id="object_type">
+      <option value="carre">Carré</option>
+      <option value="cercle">Cercle</option>
+      <option value="texte">Texte</option>
+    </select>
+    <button type="button" id="button_add" onclick="createObject()">Ajouter</button><br>
+
+    <center>Selection</center>
+    <select name="object_selected" id="object_selected" onchange="newselect()">
+    </select>
+    <button type="button" id="button_del" onclick="delObject()">Supprimer</button><br>
+
+    <center>Event</center>
+    <select name="event" id="event" onchange="setevent()">
+      <option value="nothing">Rien</option>
+      <option value="print">Print</option>
+      <option value="page">Changer de page</option>
+    </select>
+
+  
+
+</body></html>
