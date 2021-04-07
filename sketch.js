@@ -38,6 +38,21 @@ function generateE2Code(){
   
 }
 
+function copyCode() {
+  /* Get the text field */
+  var copyText = document.getElementById("output");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied EGP code!");
+}
+
 function setevent(){
   
   if(isSelectedEgpObject){
