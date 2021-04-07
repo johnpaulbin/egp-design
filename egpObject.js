@@ -79,7 +79,7 @@ class egpObject {
 
     if (this.type == "carre") {
 
-      f += 'Egp:egpBox(' + this.index + ', vec2(' + this.x + ', ' + this.y + '), vec2(' + this.sizex + ', ' + this.sizey + ')) ';
+      f += '"box'+ this.index +'" = table("box", '+ this.x +', '+ this.y +', '+ this.sizex +', '+ this.sizey +' ), ';
 
     }
     else if (this.type == "cercle") {
