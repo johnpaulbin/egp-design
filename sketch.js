@@ -12,9 +12,8 @@ function generateE2Code(){
   
   Code += "Egp:egpClear()\n\nEgpObjects = table(";
 
-  for (let i = 0; i < egpObjects.length; i++) {
-    console.log(egpObjects.length)
-    let suffix = ", "
+  for (let i = 1; i < egpObjects.length; i++) {
+    suffix = ", "
     if (i == egpObjects.length){
       suffix = ""
     }
