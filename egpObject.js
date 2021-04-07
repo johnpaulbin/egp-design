@@ -79,24 +79,18 @@ class egpObject {
 
     if (this.type == "carre") {
 
-      f += '"box'+ this.index +'" = table("box", '+ this.x +', '+ this.y +', '+ this.sizex +', '+ this.sizey +' ), ';
+      f += '"box'+ this.index +'" = table("box", '+ this.x +', '+ this.y +', '+ this.sizex +', '+ this.sizey +', '+ red(this.color) +', '+ green(this.color) +', '+ blue(this.color) +', '+ this.angle +'), ';
 
     }
     else if (this.type == "cercle") {
 
-      f += 'Egp:egpCircle(' + this.index + ', vec2(' + this.x + ', ' + this.y + '), vec2(' + this.sizex + ', ' + this.sizey + ')) ';
+      f += '"circle'+ this.index +'" = table("circle", '+ this.x +', '+ this.y +', '+ this.sizex +', '+ this.sizey +', '+ red(this.color) +', '+ green(this.color) +', '+ blue(this.color) +', '+ this.angle +'), ';
 
     }
     else if(this.type == "texte"){
-      f += 'Egp:egpText(' + this.index + ', "' + this.text + '", vec2(' + this.x + ', ' + this.y + ')) ';
-      f += 'Egp:egpSize(' + this.index + ', ' + this.sizex + ') ';
-      f += 'Egp:egpAlign(' + this.index + ', 1, 1) ';
+      f += '"text'+ this.index +'" = table("text", '+ this.text +', '+ this.x +', '+ this.y +', '+ this.sizex +', '+ red(this.color) +', '+ green(this.color) +', '+ blue(this.color) +', '+ this.angle +'), ';
       
-    }
-
-
-    f += 'Egp:egpColor(' + this.index + ', vec4(' + red(this.color) + ', ' + green(this.color) + ', ' + blue(this.color) + ', 255)) ';
-    f += 'Egp:egpAngle(' + this.index + ', -' + this.angle + ')';
+      }
 
     return f;
 

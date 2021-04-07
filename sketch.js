@@ -10,15 +10,7 @@ function generateE2Code(){
   Code += "@inputs [ Egp ]:wirelink\n";
   Code += "@persist [ Egp_use ]:number [ Egp_cursor ]:vector2 [ Egp_user ]:entity\n\n";
   
-  Code += "interval(1)\n\n";
-  
-  Code += "function number wirelink:button(ID:number,Cursor:vector2){ local BPos = This:egpPos(ID) local BSize = This:egpSize(ID)/2 local Pressed = inrange(Cursor,BPos-BSize,BPos+BSize) return Pressed }\n\n";
-  
-  Code += 'Egp_user = Egp["User", entity]\n';
-  Code += 'Egp_cursor = Egp:egpCursor(Egp_user)\n';
-  Code += 'Egp_use = Egp_user:keyUse()\n\n';
-  
-  Code += "if(first() || dupefinished()){ \n\n    Egp:egpClear()\n";
+  Code += "Egp:egpClear()\n\nEgpObjects = table(";
 
   for (let i = 0; i < egpObjects.length; i++) {
     
@@ -26,7 +18,19 @@ function generateE2Code(){
     
   }
   
-  Code += "\n\n}\n\n";
+  Code += ")";
+
+  Code += "function number wirelink:button(ID:number,Cursor:vector2){ local BPos = This:egpPos(ID) local BSize = This:egpSize(ID)/2 local Pressed = inrange(Cursor,BPos-BSize,BPos+BSize) return Pressed }\n\n";
+  
+  Code += 'Egp_user = Egp["User", entity]\n';
+  Code += 'Egp_cursor = Egp:egpCursor(Egp_user)\n';
+  Code += 'Egp_use = Egp_user:keyUse()\n\n';
+  
+  Code += "if(first() || dupefinished()){ \n\n    )\n\n# Thanks to gohidas for help with this!\n\nID_Counter = 0\nforeach(Name:string, Data:table = EgpObjects) {\n    ID_Counter++\n    #ID_Mapping[Name, number] = ID_Counter\n    switch(Data[1,string]) {\n        case \"box\",\n            Egp:egpBox( ID_Counter, vec2(Data[2, number], Data[3, number]), vec2(Data[4, number], Data[5, number]) )\n            Egp:egpColor( ID_Counter, vec4(Data[6, number], Data[7, number], Data[8, number], 255) )\n            Egp:egpAngle( ID_Counter, -Data[9, number] )\n    \n        case \"circle\",\n            Egp:egpCircle( ID_Counter, vec2(Data[2, number], Data[3, number]), vec2(Data[4, number], Data[5, number]) )\n            Egp:egpColor( ID_Counter, vec4(Data[6, number], Data[7, number], Data[8, number], 255) )\n            Egp:egpAngle( ID_Counter, -Data[9, number] )\n            \n        case \"text\",\n            Egp:egpText( ID_Counter, Data[2, string], vec2(Data[3, number], Data[4, number]) )\n            Egp:egpSize( ID_Counter, Data[5, number] )\n            Egp:egpAlign( ID_Counter, 1, 1 )\n            Egp:egpColor( ID_Counter, vec4(Data[6, number], Data[7, number], Data[8, number], 255))\n            Egp:egpAngle( ID_Counter, -Data[9, number] )\n\n    }\n}";
+
+  
+  
+  Code += "\n\n}";
   
   for (let i = 0; i < egpObjects.length; i++) {
     
