@@ -13,8 +13,11 @@ function generateE2Code(){
   Code += "Egp:egpClear()\n\nEgpObjects = table(";
 
   for (let i = 0; i < egpObjects.length; i++) {
-    
-    Code += "\n    " + egpObjects[i].generateE2Line();
+    let suffix = ", "
+    if (i == egpObjects.length){
+      suffix = ""
+    }
+    Code += "\n    " + egpObjects[i].generateE2Line() + suffix;
     
   }
   
