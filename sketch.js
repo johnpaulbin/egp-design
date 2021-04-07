@@ -12,9 +12,10 @@ function generateE2Code(){
   
   Code += "Egp:egpClear()\n\nEgpObjects = table(";
 
-  for (let i = 0; i < egpObjects.length; i++;) {
+  for (let i = 0; i < egpObjects.length; i++) {
+    let per = egpObjects.length - 1
     suffix = ", "
-    if (i == egpObjects.length - 1){
+    if (i == per){
       suffix = ""
     }
     Code += "\n    " + egpObjects[i].generateE2Line() + suffix;
