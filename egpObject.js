@@ -65,7 +65,7 @@ class egpObject {
     
     if(this.event == "print"){
       
-      f += 'if((changed(Egp_use) & Egp_use == 1) && Egp:button(' + this.index + ', Egp_cursor)){ print("click") }';
+      alert("Currently not supported")
       
     }
     
