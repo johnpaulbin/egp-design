@@ -32,6 +32,7 @@ function generateE2Code(){
     
   }
   
+  document.getElementById("output").value = "";
   document.getElementById("output").value += Code;
   print(Code);
   
