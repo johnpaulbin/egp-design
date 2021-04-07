@@ -79,16 +79,16 @@ class egpObject {
 
     if (this.type == "carre") {
 
-      f += '"box'+ this.index +'" = table("box", '+ this.x +', '+ this.y +', '+ this.sizex +', '+ this.sizey +', '+ red(this.color) +', '+ green(this.color) +', '+ blue(this.color) +', '+ this.angle +'), ';
+      f += '"box'+ this.index +'" = table("box", '+ this.x +', '+ this.y +', '+ this.sizex +', '+ this.sizey +', '+ red(this.color) +', '+ green(this.color) +', '+ blue(this.color) +', '+ this.angle +')';
 
     }
     else if (this.type == "cercle") {
 
-      f += '"circle'+ this.index +'" = table("circle", '+ this.x +', '+ this.y +', '+ this.sizex +', '+ this.sizey +', '+ red(this.color) +', '+ green(this.color) +', '+ blue(this.color) +', '+ this.angle +'), ';
+      f += '"circle'+ this.index +'" = table("circle", '+ this.x +', '+ this.y +', '+ this.sizex +', '+ this.sizey +', '+ red(this.color) +', '+ green(this.color) +', '+ blue(this.color) +', '+ this.angle +')';
 
     }
     else if(this.type == "texte"){
-      f += '"text'+ this.index +'" = table("text", '+ this.text +', '+ this.x +', '+ this.y +', '+ this.sizex +', '+ red(this.color) +', '+ green(this.color) +', '+ blue(this.color) +', '+ this.angle +'), ';
+      f += '"text'+ this.index +'" = table("text", '+ this.text +', '+ this.x +', '+ this.y +', '+ this.sizex +', '+ red(this.color) +', '+ green(this.color) +', '+ blue(this.color) +', '+ this.angle +')';
       
       }
 
