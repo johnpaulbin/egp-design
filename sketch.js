@@ -14,7 +14,8 @@ function generateE2Code(){
 
   for (let i = 0; i < egpObjects.length; i++) {
     suffix = ", "
-    if (i += 1 == egpObjects.length){
+    a = i += 1
+    if (a == egpObjects.length){
       suffix = ""
     }
     Code += "\n    " + egpObjects[i].generateE2Line() + suffix;
