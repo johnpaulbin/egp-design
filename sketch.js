@@ -4,7 +4,9 @@ let isSelectedEgpObject;
 
 function generateE2Code(){
   
-  let Code = "@name Generated EGP\n";
+  let Code = "";
+
+  Code = "@name Generated EGP\n";
   Code += "@inputs [ Egp ]:wirelink\n";
   Code += "@persist [ Egp_use ]:number [ Egp_cursor ]:vector2 [ Egp_user ]:entity\n\n";
   
