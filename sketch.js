@@ -146,7 +146,7 @@ function setup() {
   
   createCanvas(512, 512);
   
-  createButton("Générer l'E2").mousePressed(generateE2Code);
+  createButton("Generate EGP Code").mousePressed(generateE2Code);
   
   isSelectedEgpObject = false;
   
